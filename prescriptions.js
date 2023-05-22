@@ -1,28 +1,3 @@
-// Sample customer data
-const timmy = {
-  prescription: "acetaminophen",
-  pricePerRefill: 25,
-  refills: 3,
-  subscription: false,
-  coupon: true,
-};
-
-const sarah = {
-  prescription: "diphenhydramine",
-  pricePerRefill: 50,
-  refills: 1,
-  subscription: true,
-  coupon: false,
-};
-
-const rocky = {
-  prescription: "phenylephrine",
-  pricePerRefill: 30,
-  refills: 5,
-  subscription: true,
-  coupon: true,
-};
-
 /**
  * Calculates the total cost of all refills.
  * @param {number} pricePerRefill
@@ -55,11 +30,10 @@ function applyCoupon(costAfterSubscription, hasCoupon) {
   return costAfterSubscription - (hasCoupon ? 10 : 0);
 }
 
-module.exports = {
-  getTotalCost,
-  applyDiscount,
-  applyCoupon,
-  timmy,
-  sarah,
-  rocky,
-};
+if (typeof module !== "undefined") {
+  module.exports = {
+    getTotalCost,
+    applyDiscount,
+    applyCoupon,
+  };
+}
