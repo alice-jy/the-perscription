@@ -76,3 +76,25 @@ describe("getTotalCost()", () => {
 });
 
 // TODO: Write tests for applyDiscount() and applyCoupon()
+describe("applyDiscount()", () => {
+  it("checks if customer.subscription === true", () => {
+    expect(customer).toHaveProperty(subscription);
+    expect(customer.subscription).toBe(true);
+    it("returns the total cost after discount", () => {
+    expect(customer.applyDiscount).toBe(customer.getTotalCost() * 0.75);
+    })
+  }); 
+  it("checks if customer.subscription === false", () => {
+    expect(customer).toHaveProperty(subscription);
+    expect(customer.subscription).toBe(false);
+    it("returns getTotalCost()", () => {
+      expect(customer.applyDiscount()).toBe(customer.getTotalCost());
+    })
+  })
+});
+
+describe("applyCoupon()", () => {
+  it("", () => {
+    expect().toBe();
+  })
+})
